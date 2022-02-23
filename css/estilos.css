@@ -1,0 +1,28 @@
+#card-image{
+    overflow: hidden;
+    
+    height: 150px;
+    
+}
+
+*::selection {
+    background-color: rgb(251, 255, 0);
+    color: rgb(251, 255, 0);
+}
+ 
+*::-moz-selection {
+    background-color: rgb(251, 255, 0);
+    color: rgb(251, 255, 0);
+}
+
+
+body {  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.card:hover {
+    transform: scale(1.01);
+  }

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>myTasks! - Adrián Benítez</title>
+  <meta charset="utf-8" />
+
+
+  <link rel="stylesheet" href="./css/estilos.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jockey+One&family=Marmelad&family=Roboto+Condensed:wght@700&family=Secular+One&family=Sofia&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+</head>
+
+<body style="background-color: #343A40;">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html" style="font-family: 'Secular One', sans-serif;"> myTasks</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <input type="text" id="nom-task" placeholder="Search task">
+
+          <button type="button" id="btn-search" class="btn btn-outline-dark text-light">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg></i>
+          </button>
+          <button type="button" id="btn-show-all" class="btn btn-outline-dark text-light">Show all</button>
+
+          <button type="button" id="btn-delete-all" class="btn btn-outline-dark text-light">Delete all</button>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--Etiquetas categoria-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <span id="cat-primary" class="badge rounded-pill bg-primary">primary</span>
+    <span id="cat-secondary" class="badge rounded-pill bg-secondary">secondary</span>
+    <span id="cat-success" class="badge rounded-pill bg-success">success</span>
+    <span id="cat-danger" class="badge rounded-pill bg-danger">danger</span>
+    <span id="cat-warning" class="badge rounded-pill bg-warning text-dark">warning</span>
+    <span id="cat-info" class="badge rounded-pill bg-info text-dark">info</span>
+    <span id="cat-light" class="badge rounded-pill bg-light text-dark">light</span>
+
+  </nav>
+
+  <hr>
+  <!--Panel list-->
+  <div class="list-group" id="wrapper" style="padding-left: 1px; padding-bottom: 2px; background-color: #343A40;">
+    <div class="spinner-border text-danger" role="status" style="padding: 20px;">
+      <span class="sr-only" style="padding-left: 20px;">
+
+      </span>
+    </div>
+  </div>
+
+  <!--Panel cards-->
+  <div class="list-group" id="container-cards" style="display: flex; justify-content: center; ">
+    <div class="container">
+      <div id="wrapper-cards" class="row" style="padding-top: 0px; display: none;">
+
+      </div>
+    </div>
+  </div>
+
+  <!--Panel vistas-->
+  <div class="container" style="padding-top: 5px; display: flex; justify-content: center; ">
+    <ul class="pagination">
+      <li id="btn-vistaList" class="page-item">
+        <a class="page-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </a>
+      </li>
+      <li id="btn-vistaCard" class="page-item">
+        <a class="page-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-square"
+            viewBox="0 0 16 16">
+            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!--Panel vistas-->
+  <div id="notf-panel">
+
+  </div>
+
+  <!--Panel crear task-->
+  <div id="create-task"
+    style="border-radius: 5px; display: block; padding-top: 50px; padding-left: 10px; padding-bottom: 50px; background-color: #1a1e21;">
+    <div class="row">
+      <div class="col-md-12" style="padding-left: 10%; padding-right: 10%;">
+        <form>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" title="Escribe un texto descriptivo de la tarea"> Task description</span>
+            </div>
+            <input class="from-control" id="newTask" placeholder="Enter new Task">
+            <div class="input-group-prepend">
+              <span class="input-group-text" title="Escribe un texto descriptivo de la tarea"> Date</span>
+            </div>
+            <input type="date" id="date" name="trip-start" max="2040-12-31">
+          </div>
+        </form>
+
+        <div id="btn-category" style="display: inline;">
+          <button id="btn-state-primary" type="button" class="btn btn-primary">Primary</button>
+          <button id="btn-state-secondary" type="button" class="btn btn-secondary">Secondary</button>
+          <button id="btn-state-success" type="button" class="btn btn-success">Success</button>
+          <button id="btn-state-info" type="button" class="btn btn-info">Info</button>
+          <button id="btn-state-warning" type="button" class="btn btn-warning">Warning</button>
+          <button id="btn-state-danger" type="button" class="btn btn-danger">Danger</button>
+          <button id="btn-state-light" type="button" class="btn btn-light">Light</button>
+        </div>
+
+        <div id="crud-btns" style="padding-top: 20px;">
+          <button class="btn btn-success" id="addTask">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg> Add Task
+          </button>
+
+          <button class="btn btn-outline-danger" type="button" id="deleteTask">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>Delete Task
+          </button>
+
+          <button type="button" id="updateTask" class="btn btn-outline-info">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+              <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+            </svg>Update options
+          </button>
+
+          <div id="updt-params" style="display: none;">
+            <h3 style="color: aliceblue">Update: </h3>
+            <input type="text" id="tf_updt_nom_actual" placeholder="Nombre actual">
+            <input type="text" id="tf_updt_nom_nuevo" placeholder="Nombre nuevo">
+            <button id="btn-actualizar" type="button" class="btn btn-outline-dark text-light">UPDATE</button>
+            <div>
+              <label style="color: aliceblue">Cambia la fecha y la categoria con los botones superiores</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--
+
+<footer class="bg-light text-center text-lg-start">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    Adrián Benítez
+  </div>
+</footer>
+
+-->
+
+  <script src="./functions.js"></script>
+</body>
+</html> 
