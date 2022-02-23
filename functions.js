@@ -12,7 +12,7 @@ console.log('hola');
  * 
  */
 
-let url = 'mongodb://localhost:27017/mytasksAdr';
+let url = 'mongodb://localhost:27017/mytasks';
 let fichero = fs.readFileSync('./tasks.json');
 let tareas = JSON.parse(fichero);
 mongoose.Promise = global.Promise;
