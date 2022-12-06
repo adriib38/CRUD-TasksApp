@@ -1,5 +1,7 @@
 # CRUD-TasksApp
 
+Mi primer proyecto web.
+
 CRUD Tasks desktop app: Electron + Boostrap + MongoDB
 
 
